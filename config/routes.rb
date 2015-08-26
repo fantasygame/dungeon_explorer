@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     resources :characters
   end
   devise_for :users
+
+  get '/draw_treasure/:level', to: 'draw#draw_treasure'
 end
