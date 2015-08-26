@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  root 'team#index'
+  root 'teams#index'
 
-  resources :characters
-  resources :teams
+  resources :teams do
+    resources :characters
+  end
   devise_for :users
 end
