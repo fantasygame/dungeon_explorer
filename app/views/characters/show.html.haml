@@ -10,6 +10,6 @@
   %b Team:
   = character.team
 
-= link_to 'Edit', edit_character_path(character)
+= link_to 'Edit', edit_team_character_path(team, character)
 \|
-= link_to 'Back', characters_path
+= link_to 'Back', team_characters_path(team)
