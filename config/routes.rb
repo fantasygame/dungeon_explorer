@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   devise_for :users
 
   get '/draw_treasure/:level', to: 'draw#draw_treasure'
+  get '/draw_monster/:level', to: 'draw#draw_monster'
 end
