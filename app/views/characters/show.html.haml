@@ -2,14 +2,14 @@
 
 %p
   %b Name:
-  = @character.name
+  = character.name
 %p
   %b Experience:
-  = @character.experience
+  = character.experience
 %p
   %b Team:
-  = @character.team
+  = character.team
 
-= link_to 'Edit', edit_character_path(@character)
+= link_to 'Edit', edit_character_path(character)
 \|
 = link_to 'Back', characters_path
