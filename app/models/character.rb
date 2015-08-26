@@ -32,12 +32,9 @@ class Character < ActiveRecord::Base
         18 => 153000,
         19 => 171000,
         20 => 190000,
-        21 => 9999999999999
     }
-    for i in 1..20
-      if (exp >= values[i]) & (exp < values[i+1])
-        return i;
-      end
+    values.reverse_each do |level, experience|
+      return level if exp >=experience
     end
   end
 
