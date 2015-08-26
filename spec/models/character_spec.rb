@@ -18,15 +18,9 @@ RSpec.describe Character, type: :model do
       end
     end
 
-    context 'character has exp equal to second level cap' do
-      it 'returns 1st level' do
-        character.experience = 1000
-        expect(character.level).to eq 2
-      end
-    end
 
     context 'character has exp equal to second level cap' do
-      it 'returns 1st level' do
+      it 'returns 2st level' do
         character.experience = 1000
         expect(character.level).to eq 2
       end
@@ -35,7 +29,7 @@ RSpec.describe Character, type: :model do
     context 'character has exp exceeding 20th level' do
       it 'returns 20th level' do
         character.experience = 999999999
-        expect(chatecter.level).to eq 20
+        expect(character.level).to eq 20
       end
     end
   end
