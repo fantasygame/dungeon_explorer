@@ -16,10 +16,10 @@
         %td= character.name
         %td= character.experience
         %td= character.team
-        %td= link_to 'Show', team_character_path(team, character)
-        %td= link_to 'Edit', edit_team_character_path(team, character)
-        %td= link_to 'Destroy', team_character_path(team, character), method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Show', team_character_path(team, character), class: 'btn btn-default'
+        %td= link_to 'Edit', edit_team_character_path(team, character), class: 'btn btn-primary'
+        %td= link_to 'Destroy', team_character_path(team, character), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
 
 %br
 
-= link_to 'New Character', new_team_character_path(team, character)
+= link_to 'New Character', new_team_character_path(team, character), class: 'btn btn-success'

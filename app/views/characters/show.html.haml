@@ -10,6 +10,5 @@
   %b Team:
   = character.team
 
-= link_to 'Edit', edit_team_character_path(team, character)
-\|
-= link_to 'Back', team_characters_path(team)
+= link_to 'Edit', edit_team_character_path(team, character), class: 'btn btn-primary'
+= link_to 'Back', team_characters_path(team), class: 'btn btn-default'
