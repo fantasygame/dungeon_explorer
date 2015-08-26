@@ -17,7 +17,7 @@ class CharactersController < ApplicationController
 
   def create
     if character.save
-      redirect_to(characters_path)
+      redirect_to(team_characters_path(team))
     else
       render :new
     end
@@ -25,14 +25,14 @@ class CharactersController < ApplicationController
 
   def update
     if character.save
-      redirect_to(character_path)
+      redirect_to(team_character_path(team, character))
     else
       render :edit
     end
   end
 
   def destroy
-    character.destroy && redirect_to(characters_path)
+    character.destroy && redirect_to(team_characters_path(team))
   end
 
   private
