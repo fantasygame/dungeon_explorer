@@ -7,5 +7,16 @@ class DrawController < ApplicationController
   end
 
   def draw_treasure
+    assign_treasure_to_team(treasure, Team.first)
+  end
+
+  private
+
+  def assign_treasure_to_team(treasure, team)
+    treasure.items.each do |item|
+      team.items << item
+    end
+    team.money += treasure.money
+    team.save
   end
 end
