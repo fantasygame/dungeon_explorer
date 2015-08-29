@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   devise_for :users
 
   get '/draw_treasure/:team_id', to: 'draw#draw_treasure'
-  get '/draw_monster/:team_id', to: 'draw#draw_monster'
+  post '/draw_monster/:team_id', to: 'draw#draw_monster', as: 'draw_monster'
 end

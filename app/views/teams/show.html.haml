@@ -1,8 +1,8 @@
 %p#notice= notice
 
 %p
-  %b Name:
-  = team.name
+  %h3= team.name
 
+= render 'draw_encounter_form'
 = link_to 'Edit', edit_team_path(team), class: 'btn btn-primary'
 = link_to 'Back', teams_path, class: 'btn btn-default'

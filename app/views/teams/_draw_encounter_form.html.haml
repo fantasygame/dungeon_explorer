@@ -1,0 +1,12 @@
+= simple_form_for(:draw_monster, url: draw_monster_path(team)) do |f|
+  = f.error_notification
+
+  .container
+    .row
+      .col-md-1
+        .form-inputs
+          = f.input :level, as: :integer, placeholder: 'Level', required: false, input_html: { value: team.level }
+      .col-md-11.draw_encounter_button
+        .form-actions
+          = f.button :submit, 'Draw encounter', class: 'btn btn-warning'
+      .col-md-9
