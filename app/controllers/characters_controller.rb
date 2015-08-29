@@ -1,6 +1,6 @@
 class CharactersController < ApplicationController
   expose(:character, attributes: :character_params)
-  expose(:characters)
+  expose(:characters) { team.characters }
   expose(:team)
 
   def index
