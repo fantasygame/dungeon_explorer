@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150829194734) do
+ActiveRecord::Schema.define(version: 20150829201629) do
 
   create_table "characters", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -120,8 +120,9 @@ ActiveRecord::Schema.define(version: 20150829194734) do
 
   create_table "teams", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "money",      limit: 4,   default: 0
   end
 
   create_table "users", force: :cascade do |t|
