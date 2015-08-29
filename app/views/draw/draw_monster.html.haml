@@ -1,7 +1,7 @@
 .container
   .row
     .col-md-12
-      %h2 #{monster_draw[:quantity]} #{monster_draw[:monster].name}
+      %h2 #{monster_draw[:quantity]} #{monster_draw[:monster].decorate.name_pluralize(monster_draw[:quantity])}
   .well
     .monster_description
       .row
