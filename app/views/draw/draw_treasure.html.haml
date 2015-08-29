@@ -1,0 +1,12 @@
+.container
+  %h3 Treasure
+  .well
+    .money
+      .row
+        .col-md-12
+          Money #{treasure.money} gp
+    .treasure_description
+      .row
+        .col-md-12
+          - treasure.items.each do |item|
+            != item.full_text
