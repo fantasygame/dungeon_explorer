@@ -2,12 +2,13 @@ class DrawController < ApplicationController
   expose(:treasure) { TreasureDraw.new(level).call }
   expose(:monster_draw) { MonsterDraw.new(level).call }
   expose(:level) { params[:level].to_i }
+  expose(:team) { Team.find(params[:team_id]) }
 
   def draw_monster
   end
 
   def draw_treasure
-    assign_treasure_to_team(treasure, Team.first)
+    assign_treasure_to_team(treasure, team)
   end
 
   private
