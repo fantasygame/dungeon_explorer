@@ -16,19 +16,17 @@ class Team < ActiveRecord::Base
   end
 
   def level
-  return 1 if characters.empty?
-    else avglevel
-
+    return 1 if characters.empty?
+    average_team_level
   end
-end
 
 
 private
 
-def avglevel
-  teamlevel = []
-  characters.each do |character|
-    teamlevel << character.level
+  def average_team_level
+    level_sum = 0
+    characters.each {|character| level_sum += character.level }
+    (level_sum.to_f/characters.size).round
   end
-  return (teamlevel.inject(0.00){ |sum, el| sum + el } / teamlevel.size).round
+
 end
