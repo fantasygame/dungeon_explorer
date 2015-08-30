@@ -15,6 +15,7 @@ class TeamsController < ApplicationController
   end
 
   def create
+    team.members << current_user
     if team.save
       redirect_to(teams_path)
     else
