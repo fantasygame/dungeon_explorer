@@ -11,6 +11,10 @@ class Team < ActiveRecord::Base
     name
   end
 
+  def member?(user)
+    memberships.include?(user)
+  end
+
   def level
   return 1 if characters.empty?
     else avglevel
