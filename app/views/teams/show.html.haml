@@ -7,11 +7,35 @@
     .col-md-2.team_money
       %h4 Balance: #{team.money} gp
   .row
+    .col-md-12.hr
+  .row
     .col-md-4
     .col-md-4
       = render 'draw_encounter_form'
     .col-md-4
-  .row
+  .well.character_list
+    .row.table_title
+      .col-md-6
+        NAME
+      .col-md-2
+        LVL
+      .col-md-2
+        EXP
+      .col-md-2
+        TO NEXT LVL
+    - team.characters.each do |character|
+      .row
+        .col-md-6
+          = character.name
+        .col-md-2
+          = character.level
+        .col-md-2
+          = character.experience
+        .col-md-2
+          = character.decorate.next_level_experience(character.level + 1, character.experience)
+
+
+  .row.button_margin
     .col-md-12
       = link_to 'Edit', edit_team_path(team), class: 'btn btn-primary'
       = link_to 'Back', teams_path, class: 'btn btn-default'
