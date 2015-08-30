@@ -128,9 +128,9 @@ ActiveRecord::Schema.define(version: 20150830170339) do
       t.text   "full_text",         limit: 4294967295
       t.string "reference",         limit: 255,        default: ""
     end
--
--  add_index "monster", ["id"], name: "id", using: :btree
--  add_index "monster", ["name"], name: "name", using: :btree
+
+  add_index "monster", ["id"], name: "id", using: :btree
+  add_index "monster", ["name"], name: "name", using: :btree
 
 
   create_table "users", force: :cascade do |t|
