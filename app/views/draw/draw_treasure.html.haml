@@ -1,4 +1,10 @@
 .container
+  .row
+    .col-md-4
+      = link_to 'Go to Team Card', team, class: 'btn btn-default'
+    .col-md-8
+      = render 'teams/draw_encounter_form'
+
   %h3 Treasure
   .well
     .money
