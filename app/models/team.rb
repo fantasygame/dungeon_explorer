@@ -2,7 +2,10 @@ class Team < ActiveRecord::Base
   has_many :characters, dependent: :destroy
   has_many :items, through: :team_items
   has_many :team_items
+  has_many :users, through: :memberships
+  has_many :memberships
   validates :name, presence: :true
+  alias_method :members, :users
 
   def to_s
     name
