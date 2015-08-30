@@ -1,6 +1,6 @@
-%h1 Listing teams
+%h1 Your teams
 
-%table
+%table.table
   %thead
     %tr
       %th Name
@@ -11,10 +11,8 @@
   %tbody
     - teams.each do |team|
       %tr
-        %td= team.name
-        %td= link_to 'Show', team, class: 'btn btn-default'
-        %td= link_to 'Edit', edit_team_path(team), class: 'btn btn-primary'
-        %td= link_to 'Destroy', team, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
+        %td
+          %h4= link_to team.name, team
 
 %br
 
