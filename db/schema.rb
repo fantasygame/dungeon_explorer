@@ -44,6 +44,95 @@ ActiveRecord::Schema.define(version: 20150830170339) do
     t.integer  "money",      limit: 4,   default: 0
   end
 
+    create_table "equipment", force: :cascade do |t|
+      t.string "name",                        limit: 100,        default: "", null: false
+      t.string "family",                      limit: 255,        default: ""
+      t.string "category",                    limit: 255,        default: ""
+      t.string "subcategory",                 limit: 255,        default: ""
+      t.string "cost",                        limit: 255,        default: ""
+      t.string "dmg_s",                       limit: 255,        default: ""
+      t.string "armor_shield_bonus",          limit: 255,        default: ""
+      t.string "maximum_dex_bonus",           limit: 255,        default: ""
+      t.string "dmg_m",                       limit: 255,        default: ""
+      t.string "weight",                      limit: 255,        default: ""
+      t.string "critical",                    limit: 255,        default: ""
+      t.string "armor_check_penalty",         limit: 255,        default: ""
+      t.string "arcane_spell_failure_chance", limit: 255,        default: ""
+      t.string "range_increment",             limit: 255,        default: ""
+      t.string "speed_30",                    limit: 255,        default: ""
+      t.string "damage_type",                 limit: 255
+      t.string "speed_20",                    limit: 255,        default: ""
+      t.text   "full_text",                   limit: 4294967295
+      t.string "reference",                   limit: 255,        default: ""
+      t.string "third_category",              limit: 255
+    end
+
+  add_index "equipment", ["id"], name: "id", using: :btree
+  add_index "equipment", ["name"], name: "name", using: :btree
+
+  create_table "items", force: :cascade do |t|
+    t.string  "name",             limit: 100,        default: "", null: false
+    t.string  "category",         limit: 255,        default: ""
+    t.string  "subcategory",      limit: 255,        default: ""
+    t.string  "special_ability",  limit: 255,        default: ""
+    t.string  "aura",             limit: 255,        default: ""
+    t.string  "caster_level",     limit: 255,        default: ""
+    t.integer "price",            limit: 4
+    t.string  "manifester_level", limit: 255,        default: ""
+    t.text    "prereq",           limit: 4294967295
+    t.string  "cost",             limit: 255,        default: ""
+    t.string  "weight",           limit: 255,        default: ""
+    t.text    "full_text",        limit: 4294967295
+    t.string  "reference",        limit: 255,        default: ""
+    t.boolean "enchantment"
+    t.string  "special_category", limit: 255
+  end
+
+  add_index "items", ["id"], name: "id", using: :btree
+  add_index "items", ["name"], name: "name", using: :btree
+
+    create_table "monster", force: :cascade do |t|
+      t.string "family",            limit: 255,        default: ""
+      t.string "name",              limit: 100,        default: "", null: false
+      t.string "altname",           limit: 255,        default: ""
+      t.string "size",              limit: 255,        default: ""
+      t.string "genre",             limit: 255
+      t.string "descriptor",        limit: 255,        default: ""
+      t.string "hit_dice",          limit: 255,        default: ""
+      t.string "initiative",        limit: 255,        default: ""
+      t.string "speed",             limit: 255,        default: ""
+      t.string "armor_class",       limit: 255,        default: ""
+      t.string "base_attack",       limit: 255,        default: ""
+      t.string "grapple",           limit: 255,        default: ""
+      t.string "attack",            limit: 255,        default: ""
+      t.text   "full_attack",       limit: 4294967295
+      t.string "space",             limit: 255,        default: ""
+      t.string "reach",             limit: 255,        default: ""
+      t.string "special_attacks",   limit: 255,        default: ""
+      t.text   "special_qualities", limit: 4294967295
+      t.string "saves",             limit: 255,        default: ""
+      t.string "abilities",         limit: 255,        default: ""
+      t.text   "skills",            limit: 4294967295
+      t.string "bonus_feats",       limit: 255,        default: ""
+      t.text   "feats",             limit: 4294967295
+      t.text   "epic_feats",        limit: 4294967295
+      t.string "environment",       limit: 255,        default: ""
+      t.text   "organization",      limit: 4294967295
+      t.string "challenge_rating",  limit: 255,        default: ""
+      t.string "treasure",          limit: 255,        default: ""
+      t.string "alignment",         limit: 255,        default: ""
+      t.string "advancement",       limit: 255,        default: ""
+      t.string "level_adjustment",  limit: 255,        default: ""
+      t.text   "special_abilities", limit: 4294967295
+      t.text   "stat_block",        limit: 4294967295
+      t.text   "full_text",         limit: 4294967295
+      t.string "reference",         limit: 255,        default: ""
+    end
+-
+-  add_index "monster", ["id"], name: "id", using: :btree
+-  add_index "monster", ["name"], name: "name", using: :btree
+
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
