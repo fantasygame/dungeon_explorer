@@ -1,9 +1,15 @@
 .container
   .row
     .col-md-12
-      %h3
-        = monster_draw[:quantity]
-        = monster_draw[:monster].decorate.name_pluralize(monster_draw[:quantity])
+      .row
+        .col-md-5
+          %h3
+            = monster_draw[:quantity]
+            = monster_draw[:monster].decorate.name_pluralize(monster_draw[:quantity])
+        .col-md-7
+          %h3
+            = link_to 'Success', draw_treasure_path(team, level: draw_monster_level), class: 'btn btn-success'
+            = link_to 'Failure', team, class: 'btn btn-danger'
   .well
     .monster_description
       .row
