@@ -1,4 +1,4 @@
-= simple_form_for(:draw_monster, url: draw_monster_path(team)) do |f|
+= simple_form_for(:draw_monster, url: draw_monster_team_path(team), method: :get) do |f|
   = f.error_notification
 
   .container

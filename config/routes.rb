@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   resources :teams do
     resources :characters
+    member do
+      get :draw_treasure
+      get :draw_monster
+    end
   end
   devise_for :users
-
-  get '/draw_treasure/:team_id', to: 'draw#draw_treasure', as: 'draw_treasure'
-  post '/draw_monster/:team_id', to: 'draw#draw_monster', as: 'draw_monster'
 end

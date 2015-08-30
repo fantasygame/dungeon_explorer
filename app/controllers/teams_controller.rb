@@ -1,6 +1,19 @@
 class TeamsController < ApplicationController
   expose(:team, attributes: :team_params)
   expose(:teams) { current_user.teams }
+  expose(:treasure) { TreasureDraw.new(level).call }
+  expose(:experience) { EncounterExperience.new(team.level, level).call }
+  expose(:monster_draw) { MonsterDraw.new(draw_monster_level).call }
+  expose(:level) { params[:level].to_i }
+  expose(:draw_monster_level) { params[:draw_monster][:level].to_i }
+
+  def draw_monster
+  end
+
+  def draw_treasure
+    AssignTreasureToTeam.new(treasure, team).call
+    AssignExperienceToTeam.new(experience, team).call
+  end
 
   def index
   end
