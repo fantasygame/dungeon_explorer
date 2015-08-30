@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   expose(:team, attributes: :team_params)
-  expose(:teams)
+  expose(:teams) { current_user.teams }
 
   def index
   end
