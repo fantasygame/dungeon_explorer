@@ -6,16 +6,6 @@ class TeamsController < ApplicationController
   expose(:monster_draw) { MonsterDraw.new(draw_monster_level).call }
   expose(:level) { params[:level].to_i }
   expose(:draw_monster_level) { params[:draw_monster][:level].to_i }
-  expose(:items) { team.items }
-  expose(:item) { Item.find(params[:item_id]) }
-
-  def items
-    items = team.items
-  end
-
-  def item
-    Item.find(params[:item_id])
-  end
 
   def draw_monster
   end
