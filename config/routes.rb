@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :teams do
     member do
       get :items
+      get :item
     end
     resources :characters
     member do

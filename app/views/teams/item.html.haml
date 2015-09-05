@@ -1,0 +1,15 @@
+%p#notice= notice
+
+.container
+  .row
+    .col-md-10
+      %h2= item.name.upcase
+    .col-md-2.team_money
+      %h4 Price: #{item.price} gp
+  .row
+    .col-md-12.hr
+  .well.character_list
+    != item.full_text
+  .row
+    .col-md-12
+      = link_to 'Back', items_team_path(team), class: 'btn btn-default'
