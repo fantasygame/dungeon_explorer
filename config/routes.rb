@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'teams#index'
 
   resources :teams do
+    member do
+      get :items
+    end
     resources :characters
     member do
       get :draw_treasure

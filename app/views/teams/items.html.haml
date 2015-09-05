@@ -1,0 +1,34 @@
+%p#notice= notice
+
+.container
+  .row
+    .col-md-10
+      %h2 #{team.name.upcase} - ITEMS
+    .col-md-2.team_money
+      %h4 Balance: #{team.money} gp
+  .row
+    .col-md-12.hr
+  .well.character_list
+    .row.table_title
+      .col-md-4
+        NAME
+      .col-md-4
+        CATEGORY
+      .col-md-2
+        CASTER LVL
+      .col-md-2
+        PRICE
+    - items.each do |item|
+      .row
+        .col-md-4
+          = item.name
+        .col-md-4
+          = item.category
+        .col-md-2
+          = item.caster_level
+        .col-md-2
+          = item.price
+
+  .row
+    .col-md-12
+      = link_to 'Back', team_path(team), class: 'btn btn-default'
