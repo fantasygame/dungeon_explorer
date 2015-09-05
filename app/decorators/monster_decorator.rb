@@ -4,6 +4,6 @@ class MonsterDecorator < Draper::Decorator
   def name_pluralize(number)
     name = object.name.split(',')
     name[0] = name[0].pluralize if number > 1
-    name.join(', ')
+    name.join(',')
   end
 end
