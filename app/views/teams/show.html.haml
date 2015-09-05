@@ -34,8 +34,9 @@
         .col-md-2
           = character.decorate.next_level_experience(character.level + 1, character.experience)
 
-
-  .row.button_margin
-    .col-md-12
+  .row
+    .col-md-10
       = link_to 'Edit', edit_team_path(team), class: 'btn btn-primary'
       = link_to 'Back', teams_path, class: 'btn btn-default'
+    .col-md-2
+      = link_to 'Show team items', items_team_path(team), class: 'btn pull-right btn-success'
