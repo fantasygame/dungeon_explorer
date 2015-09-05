@@ -21,7 +21,7 @@
     - items.each do |item|
       .row
         .col-md-4
-          = item.name
+          = link_to item.name, item_team_path(team, item_id: item.id)
         .col-md-4
           = item.category
         .col-md-2
