@@ -16,8 +16,8 @@
         CATEGORY
       .col-md-2
         CASTER LVL
-      .col-md-2
-        PRICE
+      .col-md-2.price_position
+        PRICE (gp)
     - items.each do |item|
       .row
         .col-md-4
@@ -26,8 +26,8 @@
           = item.category
         .col-md-2
           = item.caster_level
-        .col-md-2
-          = item.price
+        .col-md-2.price_position
+          = number_with_delimiter(item.price, delimiter: " ")
 
   .row
     .col-md-12
