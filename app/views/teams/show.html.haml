@@ -5,7 +5,7 @@
     .col-md-10
       %h2= team.name.upcase
     .col-md-2.team_money
-      %h4 Balance: #{team.money} gp
+      %h4 Balance: #{number_with_delimiter(team.money, delimiter: " ")} gp
   .row
     .col-md-12.hr
   .row

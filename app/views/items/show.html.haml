@@ -5,7 +5,7 @@
     .col-md-10
       %h2= item.name.upcase
     .col-md-2.team_money
-      %h4 Price: #{item.price} gp
+      %h4 Price: #{number_with_delimiter(item.price, delimiter: " ")} gp
   .row
     .col-md-12.hr
   .well.character_list
