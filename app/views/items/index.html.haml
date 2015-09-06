@@ -9,6 +9,10 @@
   .row
     .col-md-12.hr
   .well.character_list
+    .row
+      .col-md-5
+      .col-md-7
+        = paginate(items)
     .row.table_title
       .col-md-4
         NAME
@@ -28,6 +32,10 @@
           = item.caster_level
         .col-md-2.price_position
           = number_with_delimiter(item.price, delimiter: " ")
+    .row
+      .col-md-5
+      .col-md-7
+        = paginate(items)
 
   .row
     .col-md-12
